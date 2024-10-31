@@ -1,12 +1,16 @@
-def harga_bayaran(.........):
-    
-
-
-
-
-
-    return 
-
+buku = {
+    "buku1": {"hargaRM": 6.00, "kadar_diskaun%": 10},
+    "buku2": {"hargaRM": 7.50, "kadar_diskaun%": 8},
+    "buku3": {"hargaRM": 8.90, "kadar_diskaun%": 5}
+}
+def harga_bayaran(jenisbuku, kuantiti):
+    buku_key = f"buku{jenisbuku}"
+    harga = buku[buku_key]["hargaRM"] 
+    kadar_diskaun = buku[buku_key]["kadar_diskaun%"] 
+    diskaun = harga * (kadar_diskaun / 100)
+    harga_diskaun = harga - diskaun  
+    jumlah_harga = harga_diskaun * kuantiti  
+    return diskaun * kuantiti, jumlah_harga 
 def main():
     print("Senarai belian buku:")
     print("1.Latihan Pasti A,Bahasa Melayu,Tingkatan 1")
